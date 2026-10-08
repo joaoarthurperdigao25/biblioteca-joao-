@@ -1,32 +1,62 @@
-const livros  = []
+const livros = []
 
-const adicionarLivro = (livros, livro) => {
-    livros.push(livro);
-    return livros;
+/**
+ * Função para adicionar novos livros na coleção
+ * @param {*} livros - array de livros
+ * @param {*} livro - um novo livro
+ * @returns colecao com o novo livro adicionado
+ */
+const add = (livros, livro) => {
+    livros.push(livro)
+    return livros
 }
 
-const listar = id => {
+/**
+ * Função para encontrar um livro na coleção pelo id
+ * @param {*} id 
+ * @returns o livro encontrado ou undefined
+ */
+const get = (livros, id) => livros.find(livro=>livro.id ==id)
+
+/**
+ * Função que pesquisa livros em uma coleção
+ * @param {*} livros - a coleção
+ * @param {*} termo - fragmento de título para a pesquisa
+ * @returns array de livros filtrados
+ */
+const listLivroByTitulo = (livros, termo) => 
+    livros.filter(livro => 
+        livro.titulo.toLowerCase().includes(termo.toLowerCase()))
+
+/**
+ * 
+ * @param {*} livros 
+ * @param {*} genero 
+ * @returns array de livros filtrados
+ */
+const listLivroByGenero = (livros, genero) =>
+    livros.filter(livro => 
+        livro.genero.toLowerCase().includes(genero.toLowerCase()))
+
+
+const markAsLido = (livros,  id) => {
+    livros[livros.findIndex (livro => livro.id === id)].lido = true
+}
+
+const remove = id => {
 
 }
 
-const pesquisarLivros = (livros, termo) => {
-    return livros.find(livro => livro.titulo.toLowerCase().includes(termo.toLowerCase()));
-}
-
-const filtrar = genero => {
+const estatistics = () => {
 
 }
 
-const marcarComoLido = id => {
-
-}   
-
-const remover = id => {
-
-}
-
-const estatisticas = () => {
-
-}
-
-module.exports = {adicionarLivro, pesquisar}
+// dá visibilidade a algumas funções do arquivo js.
+module.exports= {add
+    , remove
+    , get
+    , listLivroByTitulo
+    , listLivroByGenero
+    , markAsLido
+    , estatistics
+};
