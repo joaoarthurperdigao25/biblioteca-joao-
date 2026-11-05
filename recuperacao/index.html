@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de Recuperação - Programação de Clientes Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Recuperação</h1>
+    <section>
+        <h2>Exercícios DOM - Quadrados</h2>
+        <button id="btnCriarQuadrado">Criar Quadrado</button>
+        <div id="containerQuadrados"></div>
+    </section>
+    <section>
+        <h2>Lista de Nomes</h2>
+        <ul id="listaNomes"></ul>
+        <input type="text" id="inputNome" name="nome" placeholder="Digite um nome">
+        <button onclick="adicionar()">Adicionar</button>
+    </section>
+    <section>
+        <h2>Cores de Fundo (Botões)</h2>
+        <button onclick="mudarCor('red')">Vermelho</button>
+        <button onclick="mudarCor('green')">Verde</button>
+        <button onclick="mudarCor('blue')">Azul</button>
+        <button onclick="mudarCor('yellow')">Amarelo</button>
+    </section>
+    <section>
+        <h2>Cadastro de Usuário</h2>
+        <form id="formCadastro" onsubmit="validarCadastro(event)">
+            <input type="text" id="login" placeholder="Login" required><br>
+            <input type="password" id="senha" placeholder="Senha (6 a 10 caracteres)" required><br>
+            <input type="password" id="confirmaSenha" placeholder="Confirmar Senha" required><br>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
